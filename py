@@ -1,14 +1,8 @@
-string = 'a a a b c a a d c d d'.split()
-q = set(string)
-list_1 = list(q)
+n = int(input('Введите кол-во элементов первого множества: '))
+m = int(input('Введите кол-во элементов второго множества: '))
+lst_1 = {int(input('Введите элемент первого множества: ')) for i in range(n)}
+lst_2 = {int(input('Введите элемент второго множества: ')) for j in range(m)}
 
-temp = ''
-
-for j in list_1:
-    count = 1
-    for i in range(len(string)-1):
-        if temp == string[i]:
-            temp_1 = string.pop(i)
-            temp_1 = temp_1,'_', count
-            string.insert(i, temp_1)
-            count +=1
+lst_3 = list(lst_1.intersection(lst_2))
+lst_3.sort()
+print(lst_3)
